@@ -1,0 +1,5 @@
+[C:\Users\Anthony\Desktop\Childhood\_error.log.txt]
+
+[ERROR] main.angelscript, line 44: Expected ')'
+ERROR - Failed while building module.
+ERROR - ETHEngine::StartEngine: no scene has been loaded.
