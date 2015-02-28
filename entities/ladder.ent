@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="0" density="0" restitution="0" gravityScale="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+        <PivotAdjust x="5" y="0" />
+        <Sprite>ladder.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="75" y="200" z="1" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

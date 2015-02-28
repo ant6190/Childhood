@@ -13,6 +13,30 @@
                 <CustomData />
             </Entity>
         </Entity>
+        <Entity id="100" spriteFrame="0">
+            <EntityName>ladder.ent</EntityName>
+            <Position x="661" y="474" z="0" angle="0" />
+            <Entity>
+                <FileName>ladder.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="101" spriteFrame="0">
+            <EntityName>ladder.ent</EntityName>
+            <Position x="667" y="295" z="0" angle="0" />
+            <Entity>
+                <FileName>ladder.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="102" spriteFrame="0">
+            <EntityName>ladder.ent</EntityName>
+            <Position x="674" y="119" z="0" angle="0" />
+            <Entity>
+                <FileName>ladder.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
         <Entity id="21" spriteFrame="0">
             <EntityName>wall.ent</EntityName>
             <Position x="1050" y="250" z="0" angle="0" />
