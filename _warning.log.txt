@@ -1,0 +1,9 @@
+[C:\Users\Anthony\Desktop\Childhood\_warning.log.txt]
+
+[WARN ] main.angelscript, line 39: Signed/Unsigned mismatch
+
+[WARN ] main.angelscript, line 47: Signed/Unsigned mismatch
+
+[WARN ] main.angelscript, line 73: Signed/Unsigned mismatch
+
+[WARN ] main.angelscript, line 78: Signed/Unsigned mismatch

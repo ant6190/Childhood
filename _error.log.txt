@@ -1,5 +1,7 @@
 [C:\Users\Anthony\Desktop\Childhood\_error.log.txt]
 
-[ERROR] main.angelscript, line 44: Expected ')'
+[ERROR] main.angelscript, line 98: No matching signatures to 'AddEntity(string, vector2)'
+
+[ERROR] main.angelscript, line 102: No matching signatures to 'AddEntity(string, vector2)'
 ERROR - Failed while building module.
 ERROR - ETHEngine::StartEngine: no scene has been loaded.
