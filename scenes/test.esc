@@ -133,6 +133,46 @@
                 <CustomData />
             </Entity>
         </Entity>
+        <Entity id="120" spriteFrame="0">
+            <EntityName>spikes.ent</EntityName>
+            <Position x="1105" y="589.5" z="0" angle="0" />
+            <Entity>
+                <FileName>spikes.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="121" spriteFrame="0">
+            <EntityName>spikes.ent</EntityName>
+            <Position x="1275" y="589.5" z="0" angle="0" />
+            <Entity>
+                <FileName>spikes.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="122" spriteFrame="0">
+            <EntityName>spikes.ent</EntityName>
+            <Position x="1445" y="589.5" z="0" angle="0" />
+            <Entity>
+                <FileName>spikes.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="123" spriteFrame="0">
+            <EntityName>spikes.ent</EntityName>
+            <Position x="1253" y="574" z="0" angle="0" />
+            <Entity>
+                <FileName>spikes.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="124" spriteFrame="0">
+            <EntityName>spikes.ent</EntityName>
+            <Position x="1397" y="560" z="0" angle="0" />
+            <Entity>
+                <FileName>spikes.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
         <Entity id="11" spriteFrame="0">
             <EntityName>char.ent</EntityName>
             <Position x="450" y="300" z="0" angle="0" />
