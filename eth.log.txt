@@ -4,26 +4,30 @@ ____________________________
 
 Loading game script from source-code: main.angelscript
 
-[INFO ] main.angelscript, line 35: Compiling void HideT()
+[INFO ] main.angelscript, line 37: Compiling void HideT()
 
-[WARN ] main.angelscript, line 39: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 41: Signed/Unsigned mismatch
 
-[INFO ] main.angelscript, line 44: Compiling void UnhideT()
+[INFO ] main.angelscript, line 46: Compiling void UnhideT()
 
-[WARN ] main.angelscript, line 47: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 49: Signed/Unsigned mismatch
 
-[INFO ] main.angelscript, line 57: Compiling void ETHCallback_char(ETHEntity@)
+[INFO ] main.angelscript, line 60: Compiling void ETHCallback_char(ETHEntity@)
 
-[WARN ] main.angelscript, line 73: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 76: Signed/Unsigned mismatch
 
-[WARN ] main.angelscript, line 78: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 81: Signed/Unsigned mismatch
 
-Compile time: 16 milliseconds
+[WARN ] main.angelscript, line 101: Signed/Unsigned mismatch
+
+Compile time: 15 milliseconds
 (Loaded) floor.png
+(Loaded) ladder.png
 (Loaded) dudeWalker3.png
 (Loaded) enemy.png
+(Loaded) dudeWalker2.png
+(Loaded) dudeWalker1.png
+(Loaded) dudeJump.png
 (Loaded) bullet.png
 (Loaded) dudeFiring1.png
 (Loaded) dudeFiring2.png
-(Loaded) dudeWalker2.png
-(Loaded) dudeWalker1.png

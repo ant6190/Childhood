@@ -14,6 +14,8 @@ bool forwardLoop = true;
 bool moving = false;
 bool jumping = false;
 
+bool ladder = false;
+
 int shootTime = 0;
 
 int shootStatus = 0;
@@ -53,18 +55,19 @@ void ETHCallback_enemy(ETHEntity@ thisEntity){
 	thisEntity.AddToPositionX(-2.0f);
 	if(thisEntity.GetString("status") == "dead") DeleteEntity(thisEntity);
 	}
+	
 
 void ETHCallback_char(ETHEntity@ thisEntity){
 	ETHPhysicsController@ controller = thisEntity.GetPhysicsController();
 	ETHInput@ input = GetInputHandle();
-	if(moving and GetTime() % 10 == 0 and !jumping){
+	if(moving and GetTime() % 10 == 0 and !jumping and shootStatus == 0){
 		if(forwardLoop)spriteFrame+= 1;
 		if(!forwardLoop)spriteFrame-=1;
 		if(spriteFrame == 1 or spriteFrame == 3)forwardLoop = !forwardLoop;
 		thisEntity.SetSprite("entities/dudeWalker" + spriteFrame + ".png");
 		moving = false;
 	}
-	if(shootStatus != 0){
+	else if(shootStatus != 0){
 		if(shootStatus == 1){
 			thisEntity.SetSprite("entities/dudeFiring1.png");
 			shootStatus = 2;
@@ -92,8 +95,13 @@ void ETHCallback_char(ETHEntity@ thisEntity){
 		print("Stuff");
 		return;
 		}
-
-
+	ETHEntityArray ladders;
+	GetEntityArray("ladder.ent", ladders);
+	ladder = false;
+	for(int i = 0; i < ladders.Size(); i++){
+		if(distance(ladders[i].GetPositionXY(),thisEntity.GetPositionXY()) < 100)ladder = true;
+	}
+	if(!ladder)controller.SetGravityScale(1.0f);
 	// move the character to the right
 	if(input.KeyDown(K_D) and moveRight){
 		//controller.SetLinearVelocity(vector2(6.0f, 0.0f));
@@ -107,11 +115,15 @@ void ETHCallback_char(ETHEntity@ thisEntity){
 		dir = false;
 		//print("things");
 	}
-	if(input.GetKeyState(K_W) == KS_HIT and GetTime() - lastHit > 1000 and controller.GetLinearVelocity().y <= 0.0f){
+	if(input.GetKeyState(K_W) == KS_HIT and GetTime() - lastHit > 1000 and controller.GetLinearVelocity().y <= 0.0f and !ladder){
 		lastHit = GetTime();
 		controller.SetLinearVelocity(vector2(0.0f,-12.0f));
 		jumping = true;
 		//print("things");
+	}
+	else if(input.KeyDown(K_W) and ladder){
+		if(ladder)controller.SetGravityScale(0.0f);
+		thisEntity.AddToPositionY(-10.0f);
 	}
 	if(input.GetKeyState(K_SPACE) == KS_HIT){
 		shootStatus = 1;
@@ -135,8 +147,7 @@ void ETHCallback_char(ETHEntity@ thisEntity){
 }
 
 void ETHBeginContactCallback_char(ETHEntity@ thisEntity,ETHEntity@ other,vector2 contactPointA,vector2 contactPointB,vector2 contactNormal){
-	if (other.GetEntityName() == "wall.ent" and other.GetPositionY() > thisEntity.GetPositionY())
-	{
+	if (other.GetEntityName() == "wall.ent" and other.GetPositionY() > thisEntity.GetPositionY()){
 		// a 'bullet.ent' hit the TNT barrel, that must result in an explosion
 		jumping = false;
 	}
