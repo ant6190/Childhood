@@ -99,7 +99,7 @@ void ETHCallback_char(ETHEntity@ thisEntity){
 	GetEntityArray("ladder.ent", ladders);
 	ladder = false;
 	for(int i = 0; i < ladders.Size(); i++){
-		if(distance(ladders[i].GetPositionXY(),thisEntity.GetPositionXY()) < 100)ladder = true;
+		if(distance(ladders[i].GetPositionXY(),thisEntity.GetPositionXY()) < 90)ladder = true;
 	}
 	if(!ladder)controller.SetGravityScale(1.0f);
 	// move the character to the right
@@ -115,15 +115,15 @@ void ETHCallback_char(ETHEntity@ thisEntity){
 		dir = false;
 		//print("things");
 	}
-	if(input.GetKeyState(K_W) == KS_HIT and GetTime() - lastHit > 1000 and controller.GetLinearVelocity().y <= 0.0f and !ladder){
+	if(input.KeyDown(K_W) and ladder){
+		if(ladder)controller.SetGravityScale(0.0f);
+		thisEntity.AddToPositionY(-10.0f);
+	}
+	else if(input.GetKeyState(K_W) == KS_HIT and GetTime() - lastHit > 1000 and controller.GetLinearVelocity().y <= 0.0f and !ladder){
 		lastHit = GetTime();
 		controller.SetLinearVelocity(vector2(0.0f,-12.0f));
 		jumping = true;
 		//print("things");
-	}
-	else if(input.KeyDown(K_W) and ladder){
-		if(ladder)controller.SetGravityScale(0.0f);
-		thisEntity.AddToPositionY(-10.0f);
 	}
 	if(input.GetKeyState(K_SPACE) == KS_HIT){
 		shootStatus = 1;
@@ -147,7 +147,7 @@ void ETHCallback_char(ETHEntity@ thisEntity){
 }
 
 void ETHBeginContactCallback_char(ETHEntity@ thisEntity,ETHEntity@ other,vector2 contactPointA,vector2 contactPointB,vector2 contactNormal){
-	if (other.GetEntityName() == "wall.ent" and other.GetPositionY() > thisEntity.GetPositionY()){
+	if ((other.GetEntityName() == "wall.ent" or other.GetEntityName() == "movingPlat.ent") and other.GetPositionY() > thisEntity.GetPositionY()){
 		// a 'bullet.ent' hit the TNT barrel, that must result in an explosion
 		jumping = false;
 	}
@@ -176,4 +176,15 @@ void ETHCallback_bullet(ETHEntity@ thisEntity){
 	if(thisEntity.GetString("dir") == "left")controller.SetLinearVelocity(vector2(-50.0f,0.0f));
 	if(GetTime() - thisEntity.GetInt("time") > 1000) DeleteEntity(thisEntity);
 	if(thisEntity.GetString("status") == "dead")DeleteEntity(thisEntity);
+}
+
+void ETHCallback_movingPlat(ETHEntity@ thisEntity){
+	if(thisEntity.GetString("dir") == "right"){
+		thisEntity.AddToPositionX(1.0f);
+		if(thisEntity.GetPositionX() >= thisEntity.GetFloat("rightBound"))thisEntity.SetString("dir","left");
+		}
+	if(thisEntity.GetString("dir") == "left"){
+		thisEntity.AddToPositionX(-1.0f);
+		if(thisEntity.GetPositionX() <= thisEntity.GetFloat("leftBound"))thisEntity.SetString("dir","right");
+		}
 }

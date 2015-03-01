@@ -229,6 +229,14 @@
                 <CustomData />
             </Entity>
         </Entity>
+        <Entity id="60" spriteFrame="0">
+            <EntityName>enemy.ent</EntityName>
+            <Position x="1360" y="1308" z="0" angle="0" />
+            <Entity>
+                <FileName>enemy.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
         <Entity id="32" spriteFrame="0">
             <EntityName>wall.ent</EntityName>
             <Position x="1447" y="608" z="0" angle="180" />
@@ -250,6 +258,14 @@
             <Position x="2032" y="1379" z="0" angle="180" />
             <Entity>
                 <FileName>wall.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="59" spriteFrame="0">
+            <EntityName>enemy.ent</EntityName>
+            <Position x="1678" y="1311" z="0" angle="0" />
+            <Entity>
+                <FileName>enemy.ent</FileName>
                 <CustomData />
             </Entity>
         </Entity>
