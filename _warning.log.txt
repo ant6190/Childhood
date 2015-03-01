@@ -1,8 +1,10 @@
-[C:\Users\Alex-Admin\Desktop\GithubStuff\Childhood\_warning.log.txt]
+[C:\Users\Anthony\Desktop\Childhood\_warning.log.txt]
 
 [WARN ] main.angelscript, line 43: Signed/Unsigned mismatch
 
 [WARN ] main.angelscript, line 51: Signed/Unsigned mismatch
+
+[WARN ] main.angelscript, line 57: The operand is implicitly converted to handle in order to compare them
 
 [WARN ] main.angelscript, line 79: Signed/Unsigned mismatch
 

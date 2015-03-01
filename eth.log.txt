@@ -1,4 +1,4 @@
-[C:\Users\Alex-Admin\Desktop\GithubStuff\Childhood\eth.log.txt]
+[C:\Users\Anthony\Desktop\Childhood\eth.log.txt]
 Backbuffer created as 1280, 720 on default backbuffer mode
 ____________________________
 
@@ -12,6 +12,10 @@ Loading game script from source-code: main.angelscript
 
 [WARN ] main.angelscript, line 51: Signed/Unsigned mismatch
 
+[INFO ] main.angelscript, line 56: Compiling void ETHCallback_enemy(ETHEntity@)
+
+[WARN ] main.angelscript, line 57: The operand is implicitly converted to handle in order to compare them
+
 [INFO ] main.angelscript, line 62: Compiling void ETHCallback_char(ETHEntity@)
 
 [WARN ] main.angelscript, line 79: Signed/Unsigned mismatch
@@ -20,7 +24,7 @@ Loading game script from source-code: main.angelscript
 
 [WARN ] main.angelscript, line 104: Signed/Unsigned mismatch
 
-Compile time: 16 milliseconds
+Compile time: 32 milliseconds
 (Loaded) floor.png
 (Loaded) box.png
 (Loaded) ladder.png
@@ -28,8 +32,8 @@ Compile time: 16 milliseconds
 (Loaded) dudeWalker3.png
 (Loaded) solider1.png
 (Loaded) dudeWalker2.png
-(Loaded) dudeJump.png
 (Loaded) bullet.png
 (Loaded) dudeFiring1.png
 (Loaded) dudeFiring2.png
 (Loaded) dudeWalker1.png
+(Loaded) dudeJump.png

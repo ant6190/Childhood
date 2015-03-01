@@ -54,7 +54,7 @@ void UnhideT(){
 }
 	
 void ETHCallback_enemy(ETHEntity@ thisEntity){
-	thisEntity.AddToPositionX(-2.0f);
+	if(SeekEntity("char.ent") != null and distance(SeekEntity("char.ent").GetPositionXY(),thisEntity.GetPositionXY()) < 500)thisEntity.AddToPositionX(-2.0f);
 	if(thisEntity.GetString("status") == "dead") DeleteEntity(thisEntity);
 	}
 	
@@ -150,7 +150,7 @@ void ETHCallback_char(ETHEntity@ thisEntity){
 }
 
 void ETHBeginContactCallback_char(ETHEntity@ thisEntity,ETHEntity@ other,vector2 contactPointA,vector2 contactPointB,vector2 contactNormal){
-	if ((other.GetEntityName() == "wall.ent" or other.GetEntityName() == "movingPlat.ent") and other.GetPositionY() > thisEntity.GetPositionY()){
+	if ((other.GetEntityName() == "wall.ent" or other.GetEntityName() == "movingPlat.ent" or other.GetEntityName() == "box.ent") and other.GetPositionY() > thisEntity.GetPositionY()){
 		// a 'bullet.ent' hit the TNT barrel, that must result in an explosion
 		jumping = false;
 	}
@@ -197,11 +197,11 @@ void ETHCallback_movingPlat(ETHEntity@ thisEntity){
 		}
 	if(thisEntity.GetString("dir") == "down"){
 		thisEntity.AddToPositionY(1.0f);
-		if(thisEntity.GetPositionX() >= thisEntity.GetFloat("rightBound"))thisEntity.SetString("dir","up");
+		if(thisEntity.GetPositionY() >= thisEntity.GetFloat("rightBound"))thisEntity.SetString("dir","up");
 		}
 	if(thisEntity.GetString("dir") == "up"){
 		thisEntity.AddToPositionY(-1.0f);
-		if(thisEntity.GetPositionX() <= thisEntity.GetFloat("leftBound"))thisEntity.SetString("dir","down");
+		if(thisEntity.GetPositionY() <= thisEntity.GetFloat("leftBound"))thisEntity.SetString("dir","down");
 		}
 }
 
