@@ -4,8 +4,8 @@
         <Sprite>spikes.png</Sprite>
         <Particles />
         <Collision>
-            <Position x="0" y="0" z="0" />
-            <Size x="170" y="63" z="1" />
+            <Position x="40" y="-10" z="0" />
+            <Size x="145" y="100" z="1" />
         </Collision>
         <CustomData />
     </Entity>
