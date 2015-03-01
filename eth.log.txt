@@ -1,4 +1,4 @@
-[C:\Users\Anthony\Desktop\Childhood\eth.log.txt]
+[C:\Users\Alex-Admin\Desktop\GithubStuff\Childhood\eth.log.txt]
 Backbuffer created as 1280, 720 on default backbuffer mode
 ____________________________
 
@@ -24,7 +24,7 @@ Loading game script from source-code: main.angelscript
 
 [WARN ] main.angelscript, line 125: Signed/Unsigned mismatch
 
-Compile time: 16 milliseconds
+Compile time: 47 milliseconds
 (Loaded) floor.png
 (Loaded) box.png
 (Loaded) ladder.png
@@ -33,8 +33,8 @@ Compile time: 16 milliseconds
 (Loaded) robot1.png
 (Loaded) dudeWalker2.png
 (Loaded) dudeWalker1.png
+(Loaded) robot2.png
 (Loaded) bullet.png
 (Loaded) dudeFiring1.png
 (Loaded) dudeFiring2.png
-(Loaded) robot2.png
 (Loaded) dudeJump.png
