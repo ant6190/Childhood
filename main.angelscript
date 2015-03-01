@@ -16,6 +16,8 @@ bool jumping = false;
 
 bool ladder = false;
 
+bool hasGun = false;
+
 bool dead = false;
 
 int shootTime = 0;
@@ -23,6 +25,10 @@ int shootTime = 0;
 int shootStatus = 0;
 
 int spriteFrame = 1;
+
+bool phase = false;
+
+int phaseTime = 0;
 
 void main()
 {
@@ -149,7 +155,7 @@ void ETHCallback_char(ETHEntity@ thisEntity){
 		jumping = true;
 		//print("things");
 	}
-	if(input.GetKeyState(K_SPACE) == KS_HIT){
+	if(input.GetKeyState(K_ENTER) == KS_HIT and hasGun){
 		shootStatus = 1;
 		if(dir){
 		int id = AddEntity("bullet.ent", thisEntity.GetPosition() + vector3(2.0f,0.0f,0.0f));
@@ -168,6 +174,11 @@ void ETHCallback_char(ETHEntity@ thisEntity){
 	if(input.KeyDown(K_E)){
 		UnhideT();
 	}
+	if(input.GetKeyState(K_S) == KS_HIT and GetTime() - phaseTime > 1000){
+		phase = true;
+		phaseTime = GetTime();
+	}
+	else if(GetTime() - phaseTime > 1000)phase = false;
 }
 
 void ETHBeginContactCallback_char(ETHEntity@ thisEntity,ETHEntity@ other,vector2 contactPointA,vector2 contactPointB,vector2 contactNormal){
@@ -176,12 +187,17 @@ void ETHBeginContactCallback_char(ETHEntity@ thisEntity,ETHEntity@ other,vector2
 		jumping = false;
 	}
 	ETHInput@ input = GetInputHandle();
-	if(other.GetEntityName() == "phaseWall.ent" and input.KeyDown(K_D)){
+	if(other.GetEntityName() == "phaseWall.ent"){
 			ETHPhysicsController@ controller = other.GetPhysicsController();
 			controller.SetDensity(0.0f);
 		}
 }
 
+void ETHPreSolveContactCallback_phaseWall(ETHEntity@ thisEntity,ETHEntity@ other,vector2 contactPointA,vector2 contactPointB,vector2 contactNormal){
+	ETHPhysicsController@ controller = other.GetPhysicsController();
+	ETHInput@ input = GetInputHandle();
+	if (phase)DisableContact();
+}
 
 void ETHBeginContactCallback_enemy(ETHEntity@ thisEntity,ETHEntity@ other,vector2 contactPointA,vector2 contactPointB,vector2 contactNormal){
 	if (other.GetEntityName() == "bullet.ent")
@@ -233,5 +249,20 @@ void ETHBeginContactCallback_spikes(ETHEntity@ thisEntity,ETHEntity@ other,vecto
 	{
 		// a 'bullet.ent' hit the TNT barrel, that must result in an explosion
 		dead = true;
+	}
+}
+
+void ETHCallback_gunPickup(ETHEntity@ thisEntity){
+	if(thisEntity.GetInt("state") == 1 and GetTime() % 10 == 0){
+	thisEntity.SetSprite("entities/gunpickup2.png");
+	thisEntity.SetInt("state",2);
+	}
+	else if(thisEntity.GetInt("state") == 2 and GetTime() % 10 == 0){
+	thisEntity.SetSprite("entities/gunpickup1.png");
+	thisEntity.SetInt("state",1);
+	}
+	if(SeekEntity("char.ent") != null and distance(SeekEntity("char.ent").GetPositionXY(),thisEntity.GetPositionXY()) < 100){
+	hasGun = true;
+	DeleteEntity(thisEntity);
 	}
 }

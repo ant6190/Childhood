@@ -1,37 +1,37 @@
-[C:\Users\Alex-Admin\Desktop\GithubStuff\Childhood\eth.log.txt]
+[C:\Users\Anthony\Desktop\Childhood\eth.log.txt]
 Backbuffer created as 1280, 720 on default backbuffer mode
 ____________________________
 
 Loading game script from source-code: main.angelscript
 
-[INFO ] main.angelscript, line 39: Compiling void HideT()
+[INFO ] main.angelscript, line 45: Compiling void HideT()
 
-[WARN ] main.angelscript, line 43: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 49: Signed/Unsigned mismatch
 
-[INFO ] main.angelscript, line 48: Compiling void UnhideT()
+[INFO ] main.angelscript, line 54: Compiling void UnhideT()
 
-[WARN ] main.angelscript, line 51: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 57: Signed/Unsigned mismatch
 
-[INFO ] main.angelscript, line 56: Compiling void ETHCallback_enemy(ETHEntity@)
+[INFO ] main.angelscript, line 62: Compiling void ETHCallback_enemy(ETHEntity@)
 
-[WARN ] main.angelscript, line 57: The operand is implicitly converted to handle in order to compare them
+[WARN ] main.angelscript, line 63: The operand is implicitly converted to handle in order to compare them
 
-[INFO ] main.angelscript, line 80: Compiling void ETHCallback_char(ETHEntity@)
+[INFO ] main.angelscript, line 86: Compiling void ETHCallback_char(ETHEntity@)
 
-[WARN ] main.angelscript, line 100: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 106: Signed/Unsigned mismatch
 
-[WARN ] main.angelscript, line 105: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 111: Signed/Unsigned mismatch
 
-[WARN ] main.angelscript, line 125: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 131: Signed/Unsigned mismatch
 
-Compile time: 16 milliseconds
+[INFO ] main.angelscript, line 255: Compiling void ETHCallback_gunPickup(ETHEntity@)
+
+[WARN ] main.angelscript, line 264: The operand is implicitly converted to handle in order to compare them
+
+Compile time: 15 milliseconds
 (Loaded) emptyfloor.png
 (Loaded) floor.png
 (Loaded) emptyfloorprompt.png
 (Loaded) dudeWalker3.png
 (Loaded) dudeWalker2.png
-(Loaded) dudeJump.png
-(Loaded) bullet.png
-(Loaded) dudeFiring1.png
-(Loaded) dudeFiring2.png
 (Loaded) dudeWalker1.png
