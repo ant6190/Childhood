@@ -16,13 +16,13 @@ Loading game script from source-code: main.angelscript
 
 [WARN ] main.angelscript, line 57: The operand is implicitly converted to handle in order to compare them
 
-[INFO ] main.angelscript, line 62: Compiling void ETHCallback_char(ETHEntity@)
+[INFO ] main.angelscript, line 80: Compiling void ETHCallback_char(ETHEntity@)
 
-[WARN ] main.angelscript, line 82: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 100: Signed/Unsigned mismatch
 
-[WARN ] main.angelscript, line 87: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 105: Signed/Unsigned mismatch
 
-[WARN ] main.angelscript, line 107: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 125: Signed/Unsigned mismatch
 
 Compile time: 16 milliseconds
 (Loaded) floor.png
@@ -30,7 +30,11 @@ Compile time: 16 milliseconds
 (Loaded) ladder.png
 (Loaded) spikes.png
 (Loaded) dudeWalker3.png
-(Loaded) solider1.png
+(Loaded) robot1.png
 (Loaded) dudeWalker2.png
-(Loaded) dudeJump.png
 (Loaded) dudeWalker1.png
+(Loaded) bullet.png
+(Loaded) dudeFiring1.png
+(Loaded) dudeFiring2.png
+(Loaded) robot2.png
+(Loaded) dudeJump.png

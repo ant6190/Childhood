@@ -6,8 +6,8 @@
 
 [WARN ] main.angelscript, line 57: The operand is implicitly converted to handle in order to compare them
 
-[WARN ] main.angelscript, line 82: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 100: Signed/Unsigned mismatch
 
-[WARN ] main.angelscript, line 87: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 105: Signed/Unsigned mismatch
 
-[WARN ] main.angelscript, line 107: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 125: Signed/Unsigned mismatch

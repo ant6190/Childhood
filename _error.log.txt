@@ -1,5 +1,7 @@
 [C:\Users\Anthony\Desktop\Childhood\_error.log.txt]
 
-[ERROR] main.angelscript, line 159: No matching signatures to 'ETHEntity::SetDensity(const float)'
+[ERROR] main.angelscript, line 67: No conversion from 'GetTime' to math type available.
+
+[ERROR] main.angelscript, line 71: No conversion from 'GetTime' to math type available.
 ERROR - Failed while building module.
 ERROR - ETHEngine::StartEngine: no scene has been loaded.

@@ -54,7 +54,25 @@ void UnhideT(){
 }
 	
 void ETHCallback_enemy(ETHEntity@ thisEntity){
-	if(SeekEntity("char.ent") != null and distance(SeekEntity("char.ent").GetPositionXY(),thisEntity.GetPositionXY()) < 500)thisEntity.AddToPositionX(-2.0f);
+	if(SeekEntity("char.ent") != null and distance(SeekEntity("char.ent").GetPositionXY(),thisEntity.GetPositionXY()) < 500){
+		float temp = thisEntity.GetPositionX();
+		if(thisEntity.GetInt("lastChange") == 0)thisEntity.SetInt("lastChange",1);
+		thisEntity.AddToPositionX(-2.0f);
+		if(thisEntity.GetPositionX() < temp){
+			thisEntity.SetFlipX(true);
+			}
+		else if(thisEntity.GetPositionX() < temp){
+			thisEntity.SetFlipX(false);
+			}
+		if(thisEntity.GetInt("lastChange") == 1 and GetTime() % 10 == 0){
+			thisEntity.SetSprite("entities/robot2.png");
+			thisEntity.SetInt("lastChange",2);
+			}
+		else if(thisEntity.GetInt("lastChange") == 2 and GetTime() % 10 == 0){
+			thisEntity.SetSprite("entities/robot1.png");
+			thisEntity.SetInt("lastChange",1);
+			}
+		}
 	if(thisEntity.GetString("status") == "dead") DeleteEntity(thisEntity);
 	}
 	
