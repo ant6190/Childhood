@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 <Ethanon>
     <Entity shape="1" sensor="0" bullet="0" fixedRotation="1" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
-        <Sprite>enemy.png</Sprite>
+        <Sprite>solider1.png</Sprite>
         <Particles />
         <Collision>
             <Position x="0" y="0" z="0" />
-            <Size x="40" y="60" z="1" />
+            <Size x="100" y="180" z="1" />
         </Collision>
         <CustomData />
     </Entity>

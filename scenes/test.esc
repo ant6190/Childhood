@@ -205,5 +205,29 @@
                 <CustomData />
             </Entity>
         </Entity>
+        <Entity id="130" spriteFrame="0">
+            <EntityName>movingPlat.ent</EntityName>
+            <Position x="358" y="159" z="0" angle="0" />
+            <Entity>
+                <FileName>movingPlat.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>dir</Name>
+                        <Value>right</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>leftBound</Name>
+                        <Value>250</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>rightBound</Name>
+                        <Value>450</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
     </EntitiesInScene>
 </Ethanon>
