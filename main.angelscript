@@ -60,7 +60,10 @@ void ETHCallback_enemy(ETHEntity@ thisEntity){
 	
 
 void ETHCallback_char(ETHEntity@ thisEntity){
-	if(dead)DeleteEntity(thisEntity);
+	if(dead){
+	DeleteEntity(thisEntity);
+	return;
+	}
 	ETHPhysicsController@ controller = thisEntity.GetPhysicsController();
 	ETHInput@ input = GetInputHandle();
 	if(moving and GetTime() % 10 == 0 and !jumping and shootStatus == 0){
