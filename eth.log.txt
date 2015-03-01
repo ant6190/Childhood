@@ -24,17 +24,14 @@ Loading game script from source-code: main.angelscript
 
 [WARN ] main.angelscript, line 125: Signed/Unsigned mismatch
 
-Compile time: 47 milliseconds
+Compile time: 16 milliseconds
+(Loaded) emptyfloor.png
 (Loaded) floor.png
-(Loaded) box.png
-(Loaded) ladder.png
-(Loaded) spikes.png
+(Loaded) emptyfloorprompt.png
 (Loaded) dudeWalker3.png
-(Loaded) robot1.png
 (Loaded) dudeWalker2.png
-(Loaded) dudeWalker1.png
-(Loaded) robot2.png
+(Loaded) dudeJump.png
 (Loaded) bullet.png
 (Loaded) dudeFiring1.png
 (Loaded) dudeFiring2.png
-(Loaded) dudeJump.png
+(Loaded) dudeWalker1.png

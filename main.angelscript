@@ -26,7 +26,7 @@ int spriteFrame = 1;
 
 void main()
 {
-	LoadScene("scenes/level1.esc", "Background", "");
+	LoadScene("scenes/level2.esc", "Background", "");
 
 	// Prefer setting window properties in the app.enml file
 	// SetWindowProperties("Ethanon Engine", 1024, 768, true, true, PF32BIT);
