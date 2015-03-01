@@ -1,32 +1,29 @@
-[C:\Users\Alex-Admin\Desktop\GithubStuff\Childhood\eth.log.txt]
+[C:\Users\Anthony\Desktop\Childhood\eth.log.txt]
 Backbuffer created as 1280, 720 on default backbuffer mode
 ____________________________
 
 Loading game script from source-code: main.angelscript
 
-[INFO ] main.angelscript, line 37: Compiling void HideT()
+[INFO ] main.angelscript, line 39: Compiling void HideT()
 
-[WARN ] main.angelscript, line 41: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 43: Signed/Unsigned mismatch
 
-[INFO ] main.angelscript, line 46: Compiling void UnhideT()
+[INFO ] main.angelscript, line 48: Compiling void UnhideT()
 
-[WARN ] main.angelscript, line 49: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 51: Signed/Unsigned mismatch
 
-[INFO ] main.angelscript, line 60: Compiling void ETHCallback_char(ETHEntity@)
+[INFO ] main.angelscript, line 62: Compiling void ETHCallback_char(ETHEntity@)
 
-[WARN ] main.angelscript, line 76: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 79: Signed/Unsigned mismatch
 
-[WARN ] main.angelscript, line 81: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 84: Signed/Unsigned mismatch
 
-[WARN ] main.angelscript, line 101: Signed/Unsigned mismatch
+[WARN ] main.angelscript, line 104: Signed/Unsigned mismatch
 
-Compile time: 0 milliseconds
+Compile time: 16 milliseconds
 (Loaded) floor.png
+(Loaded) ladder.png
 (Loaded) dudeWalker3.png
 (Loaded) solider1.png
-(Loaded) dudeWalker2.png
-(Loaded) dudeWalker1.png
-(Loaded) bullet.png
-(Loaded) dudeFiring1.png
-(Loaded) dudeFiring2.png
 (Loaded) dudeJump.png
+(Loaded) dudeWalker2.png

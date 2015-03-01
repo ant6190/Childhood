@@ -16,6 +16,8 @@ bool jumping = false;
 
 bool ladder = false;
 
+bool dead = false;
+
 int shootTime = 0;
 
 int shootStatus = 0;
@@ -58,6 +60,7 @@ void ETHCallback_enemy(ETHEntity@ thisEntity){
 	
 
 void ETHCallback_char(ETHEntity@ thisEntity){
+	if(dead)DeleteEntity(thisEntity);
 	ETHPhysicsController@ controller = thisEntity.GetPhysicsController();
 	ETHInput@ input = GetInputHandle();
 	if(moving and GetTime() % 10 == 0 and !jumping and shootStatus == 0){
@@ -121,7 +124,7 @@ void ETHCallback_char(ETHEntity@ thisEntity){
 	}
 	else if(input.GetKeyState(K_W) == KS_HIT and GetTime() - lastHit > 1000 and controller.GetLinearVelocity().y <= 0.0f and !ladder){
 		lastHit = GetTime();
-		controller.SetLinearVelocity(vector2(0.0f,-12.0f));
+		controller.SetLinearVelocity(vector2(0.0f,-10.0f));
 		jumping = true;
 		//print("things");
 	}
@@ -151,6 +154,11 @@ void ETHBeginContactCallback_char(ETHEntity@ thisEntity,ETHEntity@ other,vector2
 		// a 'bullet.ent' hit the TNT barrel, that must result in an explosion
 		jumping = false;
 	}
+	ETHInput@ input = GetInputHandle();
+	if(other.GetEntityName() == "phaseWall.ent" and input.KeyDown(K_D)){
+			ETHPhysicsController@ controller = other.GetPhysicsController();
+			controller.SetDensity(0.0f);
+		}
 }
 
 
@@ -187,4 +195,22 @@ void ETHCallback_movingPlat(ETHEntity@ thisEntity){
 		thisEntity.AddToPositionX(-1.0f);
 		if(thisEntity.GetPositionX() <= thisEntity.GetFloat("leftBound"))thisEntity.SetString("dir","right");
 		}
+	if(thisEntity.GetString("dir") == "down"){
+		thisEntity.AddToPositionY(1.0f);
+		if(thisEntity.GetPositionX() >= thisEntity.GetFloat("rightBound"))thisEntity.SetString("dir","up");
+		}
+	if(thisEntity.GetString("dir") == "up"){
+		thisEntity.AddToPositionY(-1.0f);
+		if(thisEntity.GetPositionX() <= thisEntity.GetFloat("leftBound"))thisEntity.SetString("dir","down");
+		}
+}
+
+
+
+void ETHBeginContactCallback_spikes(ETHEntity@ thisEntity,ETHEntity@ other,vector2 contactPointA,vector2 contactPointB,vector2 contactNormal){
+	if (other.GetEntityName() == "char.ent")
+	{
+		// a 'bullet.ent' hit the TNT barrel, that must result in an explosion
+		dead = true;
+	}
 }
